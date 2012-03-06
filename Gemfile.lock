@@ -46,6 +46,7 @@ PATH
   remote: .
   specs:
     spree_correios (1.0.0)
+      correios-frete (~> 1.5.2)
       spree_core (~> 1.0.0)
 
 GEM
@@ -109,6 +110,10 @@ GEM
       ffi (~> 1.0.6)
     cocaine (0.2.1)
     columnize (0.3.6)
+    correios-frete (1.5.2)
+      log-me (~> 0.0.2)
+      nokogiri (~> 1.5.0)
+      sax-machine (~> 0.1.0)
     deface (0.7.2)
       nokogiri (~> 1.5.0)
       rails (>= 3.0.9)
@@ -141,6 +146,7 @@ GEM
       railties (>= 3.0.0)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
+    log-me (0.0.2)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -218,6 +224,8 @@ GEM
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.6.1)
+    sax-machine (0.1.0)
+      nokogiri (> 0.0.0)
     selenium-webdriver (2.20.0)
       childprocess (>= 0.2.5)
       ffi (~> 1.0)
