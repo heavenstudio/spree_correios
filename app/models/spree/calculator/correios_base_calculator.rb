@@ -2,7 +2,7 @@ module Spree
   class Calculator::CorreiosBaseCalculator < Calculator
     preference :zipcode, :string
     preference :token, :string
-    preference :password, :password
+    preference :password, :string
     preference :declared_value, :boolean, default: false
     preference :receipt_notification, :boolean, default: false
     preference :receive_in_hands, :boolean, default: false
@@ -15,22 +15,23 @@ module Spree
     
     def compute(object)
       return unless object.present? and object.line_items.present?
+      order = object.is_a?(Spree::Order) ? object : object.order
       
       package = ::Correios::Frete::Pacote.new
-      object.line_items.map do |item|
+      order.line_items.map do |item|
         weight = item.product.weight.to_f
-        length = item.product.length.to_f
+        depth  = item.product.depth.to_f
         width  = item.product.width.to_f
         height = item.product.height.to_f
-        package_item = ::Correios::Frete::PacoteItem.new(peso: weight, comprimento: length, largura: width, altura: height)
+        package_item = ::Correios::Frete::PacoteItem.new(peso: weight, comprimento: depth, largura: width, altura: height)
         package.add_item(package_item)
       end
       
       calculator = ::Correios::Frete::Calculador.new do |c| 
         c.cep_origem = preferred_zipcode
-        c.cep_destino = object.ship_address.zipcode
+        c.cep_destino = order.ship_address.zipcode
         c.encomenda = package
-        c.valor_declarado = object.amount.to_f if prefers?(:declared_value)
+        c.valor_declarado = order.amount.to_f if prefers?(:declared_value)
         c.mao_propria = prefers?(:receive_in_hands)
         c.aviso_recebimento = prefers?(:receipt_notification)
         c.codigo_empresa = preferred_token if preferred_token.present?
