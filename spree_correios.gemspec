@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_correios'
-  s.version     = '1.0.2'
+  s.version     = '1.0.3'
   s.summary     = %q{A spree extensions to add Brazil's Correio calculators}
   s.required_ruby_version = '>= 1.9.2'
 

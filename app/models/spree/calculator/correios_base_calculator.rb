@@ -10,10 +10,6 @@ module Spree
     attr_reader :delivery_time
     
     def compute(object)
-      compute_delivery_price_and_time(object)
-    end
-    
-    def compute(object)
       return unless object.present? and object.line_items.present?
       order = object.is_a?(Spree::Order) ? object : object.order
       
