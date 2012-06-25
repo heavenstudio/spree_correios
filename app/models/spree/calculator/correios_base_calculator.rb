@@ -35,9 +35,14 @@ module Spree
       end
       
       webservice = calculator.calculate(shipping_method)
-      raise webservice.msg_erro if webservice.erro?
+      return 0.0 if webservice.erro?
       @delivery_time = webservice.prazo_entrega
       webservice.valor
+    rescue 0.0
+    end
+    
+    def available?(order)
+      !compute(order).zero?
     end
     
     def has_contract?
