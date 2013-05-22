@@ -7,6 +7,7 @@ module Spree
     preference :receipt_notification, :boolean, default: false
     preference :receive_in_hands, :boolean, default: false
     
+    attr_accessible :preferred_zipcode, :preferred_token, :preferred_password, :preferred_declared_value, :preferred_receipt_notification, :preferred_receive_in_hands
     attr_reader :delivery_time
     
     def compute(object)
