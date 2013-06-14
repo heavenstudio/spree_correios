@@ -12,8 +12,16 @@ module Spree
     def compute(object)
       return unless object.present? and object.line_items.present?
       order = object.is_a?(Spree::Order) ? object : object.order
-      
+
+      itens = []
+      order.line_items.map do |item|
+        item.quantity.times do |n|
+          itens << item
+        end
+      end
+
       package = ::Correios::Frete::Pacote.new
+      itens.map do |item|
       order.line_items.map do |item|
         weight = item.product.weight.to_f
         depth  = item.product.depth.to_f
