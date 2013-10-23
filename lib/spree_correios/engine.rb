@@ -7,6 +7,7 @@ module SpreeCorreios
     config.autoload_paths += %W(#{config.root}/lib)
 
     initializer "spree.register.correios_calculator", after: "spree.register.calculators" do |app|
+      binding.pry
       app.config.spree.calculators.shipping_methods += [Spree::Calculator::Shipping::SEDEX, Spree::Calculator::Shipping::PAC, Spree::Calculator::Shipping::SEDEX10]
     end
 
@@ -16,9 +17,6 @@ module SpreeCorreios
     end
 
     def self.activate
-      Dir.glob(File.join(File.dirname(__FILE__), '../../app/models/**/*.rb')) do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
-      end
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
