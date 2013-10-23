@@ -1,5 +1,5 @@
 module Spree
-  class Calculator::CorreiosBaseCalculator < Calculator
+  class Calculator::CorreiosBaseCalculator < ShippingCalculator
     # preference :token, :string
     # preference :password, :string
     # preference :declared_value, :boolean, default: false
