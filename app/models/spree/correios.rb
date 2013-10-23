@@ -1,8 +1,8 @@
 module Spree
   module Calculator::Shipping
-    autoload :CorreiosBaseCalculator, 'app/models/spree/shipping/correios_base_calculator'
-    autoload :PAC, 					  'app/models/spree/shipping/pac'
-    autoload :SEDEX,				  'app/models/spree/shipping/sedex'
-    autoload :SEDEX10,			  	  'app/models/spree/shipping/sedex10'
+    autoload :CorreiosBaseCalculator, 'spree/shipping/correios_base_calculator'
+    autoload :PAC, 					  'spree/shipping/pac'
+    autoload :SEDEX,				  'spree/shipping/sedex'
+    autoload :SEDEX10,			  	  'spree/shipping/sedex10'
   end
 end
