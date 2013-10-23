@@ -1,3 +1,4 @@
+puts "require 3"
 module Spree
   module Calculator::Shipping
     class SEDEX < CorreiosBaseCalculator

@@ -1,3 +1,4 @@
+puts "require 2"
 module Spree
   module Calculator::Shipping
     class PAC < CorreiosBaseCalculator

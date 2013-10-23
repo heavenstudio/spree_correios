@@ -1,3 +1,4 @@
+puts "require 1"
 module Spree
   module Calculator::Shipping
     class CorreiosBaseCalculator < Spree::ShippingCalculator
