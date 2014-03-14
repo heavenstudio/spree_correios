@@ -1,5 +1,7 @@
 # Spree Correios
 
+## :warning: Este projeto foi desenvolvido pra realizar um projeto específico, no entanto não é mais mantido :warning:
+
 Uma extensão do [Spree](http://spreecommerce.com) para permitir cálculos de frete (Sedex e Pac, com ou sem contrato) utilizando o webservice dos correios, através da ótima gem [correios-frete](https://github.com/prodis/correios-frete). Esta gem supõe o uso de caixas retangulares, e não faz cálculos de embalagens em rolo ou prisma.
 
 ## Instalação
