@@ -27,9 +27,9 @@ module Spree
         c.cep_origem = preferred_zipcode
         c.cep_destino = order.ship_address.zipcode
         c.encomenda = package
-        c.valor_declarado = order.amount.to_f if prefers?(:declared_value)
-        c.mao_propria = prefers?(:receive_in_hands)
-        c.aviso_recebimento = prefers?(:receipt_notification)
+        c.valor_declarado = order.amount.to_f if preferred_declared_value
+        c.mao_propria = preferred_receive_in_hands
+        c.aviso_recebimento = preferred_receipt_notification
         c.codigo_empresa = preferred_token if preferred_token.present?
         c.senha = preferred_password if preferred_password.present?
       end
