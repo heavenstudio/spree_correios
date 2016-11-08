@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'spree_core', '>= 1.0.0'
-  s.add_dependency 'correios-frete', '~> 1.5.2'
+  s.add_dependency 'correios-frete', '~> 1.9.4'
 
   s.add_development_dependency 'capybara', '1.0.1'
   s.add_development_dependency 'factory_girl'
