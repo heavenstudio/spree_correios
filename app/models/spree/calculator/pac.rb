@@ -14,9 +14,9 @@ module Spree
     
     def shipping_code
       if has_contract?
-        04669
+        '04669'
       else
-        04510
+        '04510'
       end
     end
   end
