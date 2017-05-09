@@ -16,7 +16,7 @@ module Spree
       if has_contract?
         40096
       else
-        40010
+        04014
       end
     end
   end
