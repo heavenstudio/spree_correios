@@ -23,7 +23,6 @@ module Spree
 
       package = ::Correios::Frete::Pacote.new
       itens.map do |item|
-      order.line_items.map do |item|
         weight = item.product.weight.to_f
         depth  = item.product.depth.to_f
         width  = item.product.width.to_f
