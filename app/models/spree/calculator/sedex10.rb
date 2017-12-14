@@ -9,7 +9,7 @@ module Spree
     end
     
     def shipping_code
-      40215
+      '40215'
     end
   end
 end
